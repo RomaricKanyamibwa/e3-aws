@@ -96,6 +96,7 @@ class Table(Construct):
         time_to_live_enabled: bool | None = None,
         stream_enabled: bool | None = None,
         stream_view_type: str | None = None,
+        deletion_protection_enabled: bool | None = True,
     ):
         """Initialize an AWS DynamoDB table.
 
@@ -139,6 +140,7 @@ class Table(Construct):
         self.time_to_live_enabled = time_to_live_enabled
         self.stream_enabled = stream_enabled
         self.stream_view_type = stream_view_type
+        self.deletion_protection_enabled = deletion_protection_enabled
 
     @property
     def arn(self) -> GetAtt:
